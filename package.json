@@ -1,0 +1,23 @@
+{
+  "name": "photofox-bs",
+  "version": "1.0.0",
+  "description": "proyecto Photofox para el curso de desarrollo web - utilizando bs",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss/style.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldzabaleta/photofox-bs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ldzabaleta/photofox-bs/issues"
+  },
+  "homepage": "https://github.com/ldzabaleta/photofox-bs#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

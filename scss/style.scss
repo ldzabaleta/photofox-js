@@ -1,0 +1,189 @@
+// imports
+@import "../scss/base/variables";
+@import "../scss/base/custom";
+@import "../scss/base/globales";
+@import "../scss/base/navbar";
+@import "../scss/base/mixins";
+
+// font
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+// paddings & divisors
+.padding__top {
+  padding-top: 2rem;
+}
+
+.line__pay {
+  border-top: 1px;
+  border-bottom: 1px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  border-color: $linepay-color;
+}
+
+.divisor {
+  border-top: 1px;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-style: solid;
+  border-color: $divisor-color;
+  padding-top: 1rem;
+}
+
+.h__divisor {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 1px;
+  border-style: solid;
+  border-color: $divisor-color;
+  padding-top: 1rem;
+}
+
+// position & size
+.icon__center {
+  @include position(relative);
+  left: 45%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.pin__font--size {
+  font-size: 0.8rem;
+}
+
+.svg__size {
+  width: 50%;
+  height: 50%;
+  margin: 2rem;
+}
+
+.text-decoration-none {
+  color: $secondary;
+  transition: 0.5s;
+}
+
+.text-decoration-none:hover {
+  color: $link-hover-color;
+}
+
+// Images zoom animation
+
+.image {
+  @include position(relative);
+
+  .image__zoom {
+    @extend .image;
+    transition: transform 2s;
+  }
+}
+.image:hover .image__zoom {
+  transform: scale(1.04);
+}
+
+.creditCard__zoom {
+  @extend .image__zoom;
+
+}
+.image:hover .creditCard__zoom {
+  transform: scale(1.25);
+}
+
+// Media Query for Line Pay
+@media (min-width: 768px) {
+  .line__pay {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 1px;
+    border-right: 1px;
+    border-style: solid;
+    border-color: $linepay-color;
+  }
+  .pin__font--size {
+    font-size: 0.9rem;
+  }
+  .svg__size {
+    width: 40%;
+    height: 40%;
+    margin: 5rem;
+  }
+  button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+// Search Bar
+.form-control:focus {
+  border-color: $secondary;
+  box-shadow: 0 0 0 0 $primary;
+}
+
+// Button Style
+.int__button {
+  background-color: $secondary;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  color: $primary;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  text-decoration: none $secondary solid;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.int__button:hover {
+  background-color: $link-hover-color;
+}
+
+.int__button:focus {
+  box-shadow: none;
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+h1 {
+  font-size: map-get($title, medium__title);
+}
+
+.total {
+  color: green;
+}
+
+.float{
+	position:fixed;
+  z-index: 1;
+	width:60px;
+	height:60px;
+	bottom:120px;
+	right:40px;
+	background-color: white;
+	color:black;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px rgb(176, 176, 176);
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+.zIndex {
+  z-index: 10;
+}
