@@ -84,6 +84,8 @@ const imprimirCarrito = () => {
 
     const footer = document.getElementById("footer-modal");
     const footerContent =  `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>`;
+    const footerContentLeft = cart.length ?  `<button type="button" class="btn btn-secondary" onClick="finalizarCompra()">Finalizar compra</button>` : '';
+    
 
     if (cart.length > 0) {
         cart.forEach((product, index) => {
@@ -119,8 +121,7 @@ const imprimirCarrito = () => {
     
         const imprimirTotal = document.createElement("div");
         imprimirTotal.innerHTML = 
-        `<div class="p-5"> TOTAL $${total.toFixed(2)}</div>
-        <div class="p-5"><button class="int__button" style="line-height: 0.3rem;" onClick="finalizarCompra()">FINALIZAR COMPRA</button> </div>`;
+        `<div class="p-5"> TOTAL $${total.toFixed(2)}</div>`;
 
         carritoCompra.appendChild(imprimirTotal);
     } else {
@@ -131,7 +132,7 @@ const imprimirCarrito = () => {
         </div>`;
     }
 
-    footer.innerHTML = footerContent;
+    footer.innerHTML = `${footerContentLeft} ${footerContent}`;
 };
 
 const removeProduct = (index) => {
